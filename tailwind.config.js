@@ -4,6 +4,12 @@ module.exports = {
   presets: [require('nativewind/preset')],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Abel-Regular'],
+
+        abel: ['Abel-Regular'],
+        'sf-pro': ['SFProDisplay-Regular'],
+      },
       colors: {
         'surface-primary': '#fff',
         'surface-secondary': '#F7F7F7',
