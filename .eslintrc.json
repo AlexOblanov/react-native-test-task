@@ -55,5 +55,9 @@
     "react-native/no-inline-styles": "off",
     "@typescript-eslint/no-shadow": "off"
   },
-  "ignorePatterns": ["*.config.js", "*.config.ts"]
+  "ignorePatterns": [
+    "*.config.js",
+    "*.config.ts",
+    "src/shared/api/generated/**"
+  ]
 }
