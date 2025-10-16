@@ -3,7 +3,9 @@ import { View, Text } from 'react-native'
 const HomeScreen = () => {
   return (
     <View>
-      <Text>Hello, developer!</Text>
+      <View className="px-container-x">
+        <Text className="text-text-primary">Hello, developer!</Text>
+      </View>
     </View>
   )
 }

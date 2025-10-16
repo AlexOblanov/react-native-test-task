@@ -54,5 +54,6 @@
     "unicorn/numeric-separators-style": "off",
     "react-native/no-inline-styles": "off",
     "@typescript-eslint/no-shadow": "off"
-  }
+  },
+  "ignorePatterns": ["*.config.js", "*.config.ts"]
 }
