@@ -25,7 +25,7 @@ const ActivityCard: FC<ActivityCardProps> = props => {
           uri={activity.photoUrl}
           resizeMode="cover"
         />
-        <View></View>
+        <View />
       </View>
       <View className="p-5 rounded-[20px] bg-surface-secondary justify-between items-center flex-row">
         <View className="flex-col gap-y-3">

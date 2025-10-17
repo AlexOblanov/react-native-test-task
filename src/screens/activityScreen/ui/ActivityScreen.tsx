@@ -15,14 +15,14 @@ const ActivityScreen = () => {
 
   return (
     <View
-      style={{ marginBottom: bottom }}
+      style={{ paddingBottom: bottom }}
       className={`flex-1 bg-surface-primary`}
     >
       <StatusBar hidden />
-      <ScrollView className="flex-1">
+      <ScrollView showsVerticalScrollIndicator={false} className="flex-1">
         <ActivityDetails id={params.id} />
       </ScrollView>
-      <View className="px-container-x bg-white mt-5">
+      <View className="px-container-x bg-white mt-5 mb-1">
         <AddToFavoritesButton id={params.id} />
       </View>
     </View>

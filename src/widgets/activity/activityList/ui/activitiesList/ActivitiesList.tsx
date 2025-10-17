@@ -1,4 +1,4 @@
-import { FlatList } from 'react-native'
+import { FlatList, View } from 'react-native'
 import { ActivityCard } from '@/entities/activity'
 import ListSeparator from '../listSeparator/ListSeparator'
 import { useActivitiesList } from '../../model/hooks/useActivitiesList'
@@ -24,17 +24,18 @@ const ActivitiesList = () => {
   }
 
   return (
-    <FlatList
-      data={data}
-      keyExtractor={item => item.id.toString()}
-      renderItem={({ item }) => (
-        <ActivityCard activity={item} onPress={handleGoToActivityScreen} />
-      )}
-      className="pt-[30px] flex-1"
-      contentContainerClassName="px-container-x"
-      // eslint-disable-next-line react/no-unstable-nested-components
-      ItemSeparatorComponent={() => <ListSeparator />}
-    />
+    <View className="flex-1 pb-3">
+      <FlatList
+        data={data}
+        keyExtractor={item => item.id.toString()}
+        renderItem={({ item }) => (
+          <ActivityCard activity={item} onPress={handleGoToActivityScreen} />
+        )}
+        contentContainerClassName="px-container-x flex-grow pt-[30px]"
+        // eslint-disable-next-line react/no-unstable-nested-components
+        ItemSeparatorComponent={() => <ListSeparator />}
+      />
+    </View>
   )
 }
 
