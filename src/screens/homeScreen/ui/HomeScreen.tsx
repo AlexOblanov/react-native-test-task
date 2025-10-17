@@ -1,18 +1,17 @@
-import { View, Text } from 'react-native'
+import { ActivitiesList } from '@/widgets/activity/activityList'
+import { Text, View } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const HomeScreen = () => {
   return (
-    <View>
-      <View className="px-container-x mt-10">
-        <Text className="text-text-primary font-sans text-[24px]">
-          Hello, developer!
-        </Text>
-        <Text className="text-text-primary text-[24px]">Hello, developer!</Text>
-        <Text className="text-text-primary font-sf-pro text-[24px]">
-          Hello, developer!
+    <SafeAreaView className="bg-surface-primary flex-1">
+      <View className="pt-[18.5px] pb-[7.5px]">
+        <Text className="text-[16px] font-abel text-center text-text-primary leading-[20px]">
+          Activities
         </Text>
       </View>
-    </View>
+      <ActivitiesList />
+    </SafeAreaView>
   )
 }
 
