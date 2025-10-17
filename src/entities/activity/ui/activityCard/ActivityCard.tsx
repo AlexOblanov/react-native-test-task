@@ -7,13 +7,18 @@ import { AppImage } from '@/shared/ui/appImage/AppImage'
 
 type ActivityCardProps = {
   activity: Activity
+  onPress: (id: number) => void
 }
 
 const ActivityCard: FC<ActivityCardProps> = props => {
-  const { activity } = props
+  const { activity, onPress } = props
 
   return (
-    <TouchableOpacity activeOpacity={0.85} className="flex-col gap-y-[2px]">
+    <TouchableOpacity
+      onPress={() => onPress(activity.id)}
+      activeOpacity={0.85}
+      className="flex-col gap-y-[2px]"
+    >
       <View className="relative w-full aspect-[2.4/1]">
         <AppImage
           className="rounded-[20px] w-full h-full"
