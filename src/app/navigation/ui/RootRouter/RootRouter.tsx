@@ -2,27 +2,31 @@ import {
   TransitionPresets,
   createStackNavigator,
 } from '@react-navigation/stack'
-import { HomeScreen } from '@/screens/homeScreen'
-import { RootStackParamList } from '../model/types/root'
+import { RootStackParamList, RouteName } from '../../model/types/route'
+import { routeList } from '../../model/constants/routeList'
 
 const Stack = createStackNavigator<RootStackParamList>()
 
 const RootRouter = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName={RouteName.HOME}
       screenOptions={({ navigation }) => ({
-        headerShown: true,
+        headerShown: false,
         gestureEnabled: true,
         detachPreviousScreen: !navigation.isFocused(),
+
         ...TransitionPresets.SlideFromRightIOS,
       })}
     >
-      <Stack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{ headerShown: false }}
-      />
+      {routeList.map(screen => (
+        <Stack.Screen
+          key={screen.name}
+          name={screen.name}
+          component={screen.component}
+          options={{ headerShown: false }}
+        />
+      ))}
     </Stack.Navigator>
   )
 }

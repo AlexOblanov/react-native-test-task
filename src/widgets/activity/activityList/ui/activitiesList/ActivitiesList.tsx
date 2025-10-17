@@ -21,7 +21,7 @@ const ActivitiesList = () => {
       data={data}
       keyExtractor={item => item.id.toString()}
       renderItem={({ item }) => <ActivityCard activity={item} />}
-      className="py-[30px]"
+      className="pt-[30px] flex-1"
       contentContainerClassName="px-container-x"
       // eslint-disable-next-line react/no-unstable-nested-components
       ItemSeparatorComponent={() => <ListSeparator />}

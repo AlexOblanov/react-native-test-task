@@ -1,1 +1,1 @@
-export { default as RootRouter } from './ui/RootRouter'
+export { default as RootRouter } from './ui/RootRouter/RootRouter'
