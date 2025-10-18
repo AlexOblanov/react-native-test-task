@@ -1,10 +1,13 @@
-import { useGetActivities } from '@/shared/api/generated/api'
+import {
+  getGetActivitiesQueryKey,
+  useGetActivities,
+} from '@/shared/api/generated/api'
 import { normalizeActivity } from '../helpers/normalizeActivity'
 
 export const useActivitiesList = () => {
   const fields = useGetActivities({
     query: {
-      queryKey: ['activities'],
+      queryKey: getGetActivitiesQueryKey(),
       select: data => (data ?? []).map(normalizeActivity),
     },
   })

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { View, Text } from 'react-native'
 import { useActivityById } from '../../model/hooks/useActivityById'
 import { AppImage } from '@/shared/ui/appImage/AppImage'
@@ -15,12 +15,14 @@ const ActivityDetails: FC<ActivityDetailsProps> = props => {
   const { id } = props
   const { activity } = useActivityById(id)
 
+  useEffect(() => {
+    if (!activity) {
+      handleGoBack()
+    }
+  }, [activity])
+
   const handleGoBack = () => {
     navigation.goBack()
-  }
-
-  if (!activity) {
-    return null
   }
 
   return (
@@ -28,7 +30,7 @@ const ActivityDetails: FC<ActivityDetailsProps> = props => {
       <View className="relative w-full aspect-[8/10]">
         <AppImage
           className="rounded-b-[20px] w-full h-full"
-          uri={activity.photoUrl}
+          uri={activity?.photoUrl}
         />
         <View className="absolute top-[35px] left-[13px] ">
           <CustomButton
@@ -43,12 +45,12 @@ const ActivityDetails: FC<ActivityDetailsProps> = props => {
         <View className="py-5 border-b-[1px] border-b-border-primary">
           <View className="flex-col gap-y-5">
             <Text className="font-abel text-[24px] text-text-primary">
-              {activity.name}
+              {activity?.name}
             </Text>
 
             <View className="flex-row justify-between items-center">
               <Text className="text-[16px] font-abel text-text-primary">
-                ${activity.price}
+                ${activity?.price.toFixed(2)}
               </Text>
               <Text className="text-[12px] font-sf-pro text-text-secondary">
                 Included taxes and fees
@@ -62,7 +64,7 @@ const ActivityDetails: FC<ActivityDetailsProps> = props => {
             Description
           </Text>
           <Text className="text-[14px] text-text-tertiary font-sf-pro">
-            {activity.description}
+            {activity?.description}
           </Text>
         </View>
       </View>

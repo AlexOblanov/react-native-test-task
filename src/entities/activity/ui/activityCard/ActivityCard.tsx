@@ -37,12 +37,14 @@ const ActivityCard: FC<ActivityCardProps> = props => {
         </View>
 
         <View className="flex-col gap-y-3">
-          <View className="gap-x-[2px] items-center flex-row">
+          <View className="gap-x-[2px] items-center flex-row justify-end">
             <StarIcon />
             <Text className="text-[12px] font-sf-pro">{activity.rating}</Text>
           </View>
           <View className="items-center gap-x-1 flex-row">
-            <Text className="text-[14px] font-abel">${activity.price}</Text>
+            <Text className="text-[14px] font-abel">
+              ${activity.price.toFixed(2)}
+            </Text>
             <Text className="text-[12px] font-sf-pro text-text-secondary">
               / night
             </Text>
