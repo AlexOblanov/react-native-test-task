@@ -24,14 +24,14 @@ const ActivitiesList = () => {
   }
 
   return (
-    <View className="flex-1 pb-3">
+    <View className="flex-1">
       <FlatList
         data={data}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
           <ActivityCard activity={item} onPress={handleGoToActivityScreen} />
         )}
-        contentContainerClassName="px-container-x flex-grow pt-[30px]"
+        contentContainerClassName="px-container-x flex-grow pt-[30px] pb-3"
         // eslint-disable-next-line react/no-unstable-nested-components
         ItemSeparatorComponent={() => <ListSeparator />}
       />

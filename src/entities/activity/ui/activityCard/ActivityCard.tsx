@@ -29,20 +29,26 @@ const ActivityCard: FC<ActivityCardProps> = props => {
       </View>
       <View className="p-5 rounded-[20px] bg-surface-secondary justify-between items-center flex-row">
         <View className="flex-col gap-y-3">
-          <Text className="font-abel text-[16px]">{activity.name}</Text>
+          <Text className="font-abel text-[16px] text-text-primary">
+            {activity.name}
+          </Text>
           <View className="flex-row gap-x-[6px] items-center">
             <MapPinIcon />
-            <Text className="text-[12px] font-sf-pro">{activity.location}</Text>
+            <Text className="text-[12px] font-sf-pro text-text-primary">
+              {activity.location}
+            </Text>
           </View>
         </View>
 
         <View className="flex-col gap-y-3">
           <View className="gap-x-[2px] items-center flex-row justify-end">
             <StarIcon />
-            <Text className="text-[12px] font-sf-pro">{activity.rating}</Text>
+            <Text className="text-[12px] font-sf-pro text-text-primary">
+              {activity.rating}
+            </Text>
           </View>
           <View className="items-center gap-x-1 flex-row">
-            <Text className="text-[14px] font-abel">
+            <Text className="text-[14px] font-abel text-text-primary">
               ${activity.price.toFixed(2)}
             </Text>
             <Text className="text-[12px] font-sf-pro text-text-secondary">
